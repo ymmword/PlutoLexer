@@ -1,0 +1,27 @@
+var x;
+
+procedure A;
+
+  var y;
+
+  procedure B;
+    begin
+      x := x + y;
+      write x;
+    end;
+
+  procedure C;
+    begin
+      call B;
+      if x < 10 then call C;
+    end;
+
+  begin
+    y := 2;
+    call C;
+  end;
+
+begin
+  x := 5;
+  call A;
+end.

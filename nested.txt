@@ -1,0 +1,23 @@
+var x;
+
+procedure A;
+
+  var y;
+
+  procedure B;
+    begin
+      x := x + y;              /* <- line */
+      write x;
+      if x < 10 then call B;   /* (I) */
+    end;
+
+  begin
+    y := 2;
+    call B;                    /* (II) */
+  end;
+
+begin
+  x := 5;
+  call A;
+end.
+
